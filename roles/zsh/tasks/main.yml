@@ -24,16 +24,8 @@
       ansible.builtin.command:
         cmd: "sh {{ ansible_user_dir }}/oh-my-zsh.install.sh"
 
-- name: Run ls command
-  command: ls
-  register: ls_output
-    
-- name: Display ls output
-  debug:
-    var: ls_output.stdout_lines
-
 - name: "Zsh | Update .zshrc for all users"
   ansible.builtin.copy:
     src: ".zshrc"
-    dest: "{{ ansible_env.HOME }}/.zshrc"
+    dest: "roles/zsh/files/.zshrc"
     mode: "0644"
