@@ -101,8 +101,45 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+
+# Aliases
+alias piiing='sudo ping -f duck.com'
+alias ll='ls -alF'
+alias la='ls -a'
+alias vi='nvim'
+alias tmux='tmux -2'
+
+# Neovim configuration
+export EDITOR=nvim
+
+# Tmux configuration
+# Uncomment below line to enable mouse support
+# set-option -g mouse on
+
+# 1Password CLI
+#eval $(op signin <your_account>)
+
+# Git configuration
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=true
+source /usr/share/git/completion/git-prompt.sh
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+# Bat configuration
+export BAT_THEME="ansi"
+export BAT_PAGER="less"
+
+# Enable auto-suggestions plugin
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# History configuration
+HISTFILE=$HOME/.zsh_history
+#HISTSIZE=10000
+#SAVEHIST=10000
+
+
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-alias piiing='sudo ping -f duck.com'
-alias ls='exa'
