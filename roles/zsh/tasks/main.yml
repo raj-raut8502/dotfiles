@@ -24,14 +24,8 @@
       ansible.builtin.command:
         cmd: "sh {{ ansible_user_dir }}/oh-my-zsh.install.sh"
 
-- name: "Zsh | Set default shell to zsh"
-  ansible.builtin.user:
-    name: "{{ ansible_user_dir }}"
-    shell: "/bin/zsh"
-  become: true
-
 - name: "Zsh | Update .zshrc for all users"
   ansible.builtin.copy:
-    src: "path/to/.zshrc"
+    src: ".zshrc"
     dest: "{{ ansible_user_dir }}/.zshrc"
     mode: "0644"
