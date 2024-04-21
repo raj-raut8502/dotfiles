@@ -27,5 +27,5 @@
 - name: "Zsh | Update .zshrc for all users"
   ansible.builtin.copy:
     src: ".zshrc"
-    dest: "{{ ansible_user_dir }}/.zshrc"
+    dest: "{{ ansible_env.HOME }}/.zshrc"
     mode: "0644"
