@@ -1,0 +1,10 @@
+---
+- name: Remove Oh My Zsh Install Script
+  ansible.builtin.file:
+    path: /tmp/oh-my-zsh.install.sh
+    state: absent
+
+- name: Cleanup Oh My Zsh Install Script
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/oh-my-zsh.install.sh"
+    state: absent

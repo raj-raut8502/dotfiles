@@ -1,0 +1,9 @@
+---
+- name: Install ZSH and plugins
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - zsh
+    - zsh-autosuggestions
+    - zsh-syntax-highlighting
