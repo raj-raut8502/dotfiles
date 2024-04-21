@@ -24,6 +24,9 @@
       ansible.builtin.command:
         cmd: "sh {{ ansible_user_dir }}/oh-my-zsh.install.sh"
 
+- name: Run ls command
+  command: ls /path/to/src_directory
+
 - name: "Zsh | Update .zshrc for all users"
   ansible.builtin.copy:
     src: ".zshrc"
