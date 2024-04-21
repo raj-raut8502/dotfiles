@@ -92,6 +92,9 @@ function _task_done {
 }
 
 function ubuntu_setup() {
+  _cmd "sudo ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime"
+  _cmd "sudo DEBIAN_FRONTEND=noninteractive apt install -y software-properties-common python3-pip"
+
   if ! dpkg -s ansible >/dev/null 2>&1; then
     _task "Installing Ansible"
     _cmd "sudo apt-get update"
