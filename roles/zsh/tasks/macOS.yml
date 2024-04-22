@@ -5,8 +5,6 @@
     state: present
   loop:
     - zsh
-    - zsh-autosuggestions
-    - zsh-syntax-highlighting
 
 - name: Clone zsh-autosuggestions plugin
   git:
