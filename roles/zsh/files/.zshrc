@@ -126,14 +126,14 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=true
 source /usr/share/git/completion/git-prompt.sh
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 # Bat configuration
 export BAT_THEME="ansi"
 export BAT_PAGER="less"
 
-# Enable auto-suggestions plugin
+# Plugins
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # History configuration
 HISTFILE=$HOME/.zsh_history
@@ -141,5 +141,4 @@ HISTFILE=$HOME/.zsh_history
 #SAVEHIST=10000
 
 
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
