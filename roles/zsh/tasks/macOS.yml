@@ -18,6 +18,6 @@
     mode: "0755"
     follow: yes  # Follow symbolic links
   loop:
-    - "/opt/homebrew/Cellar/zsh-autosuggestions/*/share/zsh-autosuggestions/"
-    - "/opt/homebrew/Cellar/zsh-syntax-highlighting/*/share/zsh-syntax-highlighting/"
+    - "/opt/homebrew/share/zsh-autosuggestions"
+    - "/opt/homebrew/share/zsh-syntax-highlighting"
   become: no
