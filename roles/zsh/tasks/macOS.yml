@@ -8,7 +8,6 @@
     - zsh-autosuggestions
     - zsh-syntax-highlighting
 
----
 - name: Copy zsh-autosuggestions and zsh-syntax-highlighting to $ZSH
   hosts: localhost
   tasks:
