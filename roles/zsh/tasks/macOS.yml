@@ -1,12 +1,15 @@
 ---
 - name: Install ZSH and plugins
-  homebrew:
-    name: "{{ item }}"
-    state: present
-  loop:
-    - zsh
-    - zsh-autosuggestions
-    - zsh-syntax-highlighting
+  hosts: localhost
+  tasks:
+    - name: Install ZSH and plugins
+      homebrew:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - zsh
+        - zsh-autosuggestions
+        - zsh-syntax-highlighting
 
 - name: Copy zsh-autosuggestions and zsh-syntax-highlighting to $ZSH
   hosts: localhost
