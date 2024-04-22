@@ -8,16 +8,23 @@
     - zsh-autosuggestions
     - zsh-syntax-highlighting
 
-- name: Copy zsh-autosuggestions and zsh-syntax-highlighting
-  ansible.builtin.copy:
-    src: "{{ item }}"
-    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/"
-    remote_src: yes
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
-    mode: "0755"
-    follow: yes  # Follow symbolic links
+- name: Clone zsh-autosuggestions plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    clone_depth: 1
+  register: autosuggestions_clone
+
+- name: Clone zsh-syntax-highlighting plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+    clone_depth: 1
+  register: syntax_highlighting_clone
+
+- name: Print clone results
+  debug:
+    msg: "{{ item.dest }} cloned successfully: {{ item.changed }}"
   loop:
-    - "/opt/homebrew/share/zsh-autosuggestions"
-    - "/opt/homebrew/share/zsh-syntax-highlighting"
-  become: no
+    - "{{ autosuggestions_clone }}"
+    - "{{ syntax_highlighting_clone }}"
