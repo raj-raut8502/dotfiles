@@ -5,24 +5,3 @@
     state: present
   loop:
     - zsh
-
-- name: Clone zsh-autosuggestions plugin
-  git:
-    repo: https://github.com/zsh-users/zsh-autosuggestions
-    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-    clone_depth: 1
-  register: autosuggestions_clone
-
-- name: Clone zsh-syntax-highlighting plugin
-  git:
-    repo: https://github.com/zsh-users/zsh-syntax-highlighting
-    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-    clone_depth: 1
-  register: syntax_highlighting_clone
-
-- name: Print clone results
-  debug:
-    msg: "{{ item.dest }} cloned successfully: {{ item.changed }}"
-  loop:
-    - "{{ autosuggestions_clone }}"
-    - "{{ syntax_highlighting_clone }}"
