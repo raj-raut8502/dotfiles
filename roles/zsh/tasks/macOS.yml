@@ -7,3 +7,16 @@
     - zsh
     - zsh-autosuggestions
     - zsh-syntax-highlighting
+
+- name: Copy zsh-autosuggestions and zsh-syntax-highlighting
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/"
+    remote_src: yes
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0755"
+  loop:
+    - "/opt/homebrew/share/zsh-autosuggestions"
+    - "/opt/homebrew/share/zsh-syntax-highlighting"
+  become: no
