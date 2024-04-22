@@ -1,15 +1,12 @@
 ---
 - name: Install ZSH and plugins
-  hosts: localhost
-  tasks:
-    - name: Install ZSH and plugins
-      homebrew:
-        name: "{{ item }}"
-        state: present
-      loop:
-        - zsh
-        - zsh-autosuggestions
-        - zsh-syntax-highlighting
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - zsh
+    - zsh-autosuggestions
+    - zsh-syntax-highlighting
 
 - name: Copy zsh-autosuggestions and zsh-syntax-highlighting
   ansible.builtin.copy:
