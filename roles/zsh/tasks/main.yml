@@ -24,17 +24,28 @@
       ansible.builtin.command:
         cmd: "sh {{ ansible_user_dir }}/oh-my-zsh.install.sh"
 
-- name: Clone zsh-autosuggestions plugin
-  git:
-    repo: https://github.com/zsh-users/zsh-autosuggestions
-    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-    clone_depth: 1
+- name: Clone zsh-syntax-highlighting repository
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: "{{ ansible_user_dir }}/.zsh-syntax-highlighting"
+    depth: 1
 
-- name: Clone zsh-syntax-highlighting plugin
-  git:
-    repo: https://github.com/zsh-users/zsh-syntax-highlighting
-    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-    clone_depth: 1
+- name: Add zsh-syntax-highlighting to .zshrc
+  ansible.builtin.lineinfile:
+    dest: "{{ ansible_user_dir }}/.zshrc"
+    line: "source {{ ansible_user_dir }}/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+- name: Clone zsh-autosuggestions repository
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git
+    dest: "{{ ansible_user_dir }}/.zsh-autosuggestions"
+    depth: 1
+
+- name: Add zsh-autosuggestions to .zshrc
+  ansible.builtin.lineinfile:
+    dest: "{{ ansible_user_dir }}/.zshrc"
+    line: "source {{ ansible_user_dir }}/.zsh-autosuggestions/zsh-autosuggestions.zsh"
+
 
 - name: "Zsh | Update .zshrc for all users"
   ansible.builtin.copy:
