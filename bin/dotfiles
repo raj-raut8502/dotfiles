@@ -122,9 +122,12 @@ function ubuntu_setup() {
     _cmd "sudo apt-get install -y git"
   fi
 
-
   _task "Setting Locale"
-  _cmd "sudo localectl set-locale LANG=en_US.UTF-8"
+  _cmd "echo 'LANG="en_US.UTF-8"' | sudo tee /etc/default/locale >/dev/null"
+  _cmd "echo 'LANG="en_US.UTF-8"' | sudo tee /etc/locale.gen >/dev/null"
+  _cmd "echo 'LANG="en_US.UTF-8"' | sudo tee /etc/locale.conf >/dev/null"
+  _cmd "sudo locale-gen en_US.UTF-8"
+  _cmd "export LANG="en_US.UTF-8""
 }
 
 function arch_setup() {
