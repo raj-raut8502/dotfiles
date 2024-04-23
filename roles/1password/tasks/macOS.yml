@@ -1,5 +1,8 @@
 ---
-- name: Install 1Password
+- name: Install 1Password and 1Password CLI
   homebrew:
-    name: 1password
+    name: "{{ item }}"
     state: present
+  with_items:
+    - 1password
+    - 1password-cli
