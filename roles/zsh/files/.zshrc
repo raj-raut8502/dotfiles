@@ -125,7 +125,6 @@ GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=true
-source /usr/share/git/completion/git-prompt.sh
 
 # Bat configuration
 export BAT_THEME="ansi"
