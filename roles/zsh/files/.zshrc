@@ -132,13 +132,10 @@ export BAT_THEME="ansi"
 export BAT_PAGER="less"
 
 # Plugins
-source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # History configuration
 HISTFILE=$HOME/.zsh_history
 #HISTSIZE=10000
 #SAVEHIST=10000
-
-
-
