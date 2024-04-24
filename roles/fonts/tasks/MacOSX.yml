@@ -1,5 +1,10 @@
 - name: "Fonts | Install"
   ansible.builtin.homebrew:
-    name: fonts-powerline
+    name: 
+      - homebrew/cask-fonts/font-fira-code-nerd-font
+      - homebrew/cask-fonts/font-fira-mono-nerd-font
+      - homebrew/cask-fonts/font-jetbrains-mono-nerd-font
+      - homebrew/cask-fonts/font-roboto-mono-nerd-font
+      - homebrew/cask-fonts/font-ubuntu-mono-nerd-font
     state: present
   become: true
