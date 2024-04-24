@@ -1,7 +1,7 @@
 ---
-- name: Run macOS Tasks
-  ansible.builtin.import_tasks: macOS.yml
+- name: Run macOSX Tasks
+  ansible.builtin.import_tasks: macOSX.yml
   when: ansible_os_family == 'Darwin'
 - name: Run Ubuntu Tasks
-  ansible.builtin.import_tasks: ubuntu.yml
+  ansible.builtin.import_tasks: Ubuntu.yml
   when: ansible_os_family == 'Debian'
