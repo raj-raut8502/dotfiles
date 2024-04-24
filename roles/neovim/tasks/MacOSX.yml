@@ -1,4 +1,9 @@
 ---
+- name: Install Lua
+  homebrew:
+    name: lua
+    state: present
+
 - name: Install Neovim
   homebrew:
     name: neovim
