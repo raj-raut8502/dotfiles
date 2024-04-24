@@ -1,7 +1,9 @@
 ---
-- name: Run macOS Tasks
-  ansible.builtin.import_tasks: macOS.yml
-  when: ansible_os_family == 'Darwin'
-- name: Run Ubuntu Tasks
-  ansible.builtin.import_tasks: ubuntu.yml
-  when: ansible_os_family == 'Debian'
+- name: "Tmux | Checking for Distribution Config: {{ ansible_distribution }}"
+  ansible.builtin.stat:
+    path: "{{ role_path }}/tasks/{{ ansible_distribution }}.yml"
+  register: tmux_distribution_config
+
+- name: "Tmux | Run Tasks: {{ ansible_distribution }}"
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
+  when: tmux_distribution_config.stat.exists
