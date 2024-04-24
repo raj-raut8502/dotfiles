@@ -1,5 +1,0 @@
----
-- name: Install Lua
-  homebrew:
-    name: lua
-    state: present
