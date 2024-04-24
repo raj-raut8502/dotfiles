@@ -3,3 +3,4 @@
   apt:
     name: zsh
     state: present
+  become: true
