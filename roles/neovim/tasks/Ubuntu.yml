@@ -9,6 +9,7 @@
       - unzip
       - ansible-lint
       - ripgrep
+      - neovim
     state: present
   become: true
 
