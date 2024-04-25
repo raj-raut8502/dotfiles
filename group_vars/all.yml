@@ -4,8 +4,7 @@ default_roles:
   - bash
   - bat
   - fonts
-  - git
-  - lua
+ # - git
   - neovim
   - python
   - ssh
