@@ -121,6 +121,10 @@ function ubuntu_setup() {
     _task "Installing Git"
     _cmd "sudo apt-get install -y git"
   fi
+  if ! command -v stow >/dev/null 2>&1; then
+    _task "Installing Stow"
+    _cmd "sudo apt-get install -y stow"
+  fi
 
   _task "Setting Locale"
   _cmd "echo 'LANG="en_US.UTF-8"' | sudo tee /etc/default/locale >/dev/null"
