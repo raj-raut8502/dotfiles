@@ -1,5 +1,0 @@
----
-- name: Install Bat
-  homebrew:
-    name: bat
-    state: present
