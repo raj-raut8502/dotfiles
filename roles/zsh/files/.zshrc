@@ -102,7 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-
 # Aliases
 alias piiing='sudo ping -f duck.com'
 alias ll='ls -alF'
@@ -119,12 +118,6 @@ export EDITOR=nvim
 
 # 1Password CLI
 #eval $(op signin <your_account>)
-
-# Git configuration
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWUPSTREAM="auto"
-GIT_PS1_SHOWCOLORHINTS=true
 
 # Bat configuration
 export BAT_THEME="ansi"
